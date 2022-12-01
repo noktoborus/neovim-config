@@ -120,3 +120,6 @@ nnoremap <Leader>r <cmd>Lspsaga rename<CR>
 nnoremap <Leader>b <cmd>Lspsaga lsp_finder<CR>
 " aCtion
 noremap <Leader>c <cmd>Lspsaga code_action<CR>
+
+" Terminal
+noremap <C-t> <cmd>terminal<CR>
