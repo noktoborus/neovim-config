@@ -19,6 +19,9 @@ Plug 'neovim/nvim-lspconfig'
 " LSP Features
 Plug 'glepnir/lspsaga.nvim'
 
+" automatically cwd to lsp's project root
+Plug 'ahmedkhalf/lsp-rooter.nvim'
+
 " Autocomplition
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-buffer'
@@ -54,7 +57,7 @@ Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'farmergreg/vim-lastplace'
 Plug 'tpope/vim-sensible'
 Plug 'junegunn/seoul256.vim'
-
+Plug 'rcarriga/nvim-notify'
 Plug 'fgheng/winbar.nvim'
 call plug#end()
 

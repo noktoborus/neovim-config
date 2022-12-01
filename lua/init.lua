@@ -217,3 +217,5 @@ require('lspsaga').init_lsp_saga({
     click_support = false,
   },
 })
+
+require("lsp-rooter").setup({})
