@@ -80,6 +80,7 @@ set smarttab
 set number
 set termguicolors
 set completeopt=menu,menuone,noselect
+set list
 
 let mapleader = " "
 
@@ -126,6 +127,6 @@ noremap <C-t> <cmd>terminal<CR>
 
 augroup custom_term
 	autocmd!
-	autocmd TermOpen * setlocal nonumber norelativenumber bufhidden=hide
+	autocmd TermOpen * setlocal nonumber norelativenumber nolist bufhidden=hide
   autocmd TermOpen * startinsert
 augroup END
