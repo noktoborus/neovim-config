@@ -123,3 +123,9 @@ noremap <Leader>c <cmd>Lspsaga code_action<CR>
 
 " Terminal
 noremap <C-t> <cmd>terminal<CR>
+
+augroup custom_term
+	autocmd!
+	autocmd TermOpen * setlocal nonumber norelativenumber bufhidden=hide
+  autocmd TermOpen * startinsert
+augroup END
