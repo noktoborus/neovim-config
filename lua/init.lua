@@ -142,6 +142,11 @@ require('gitsigns').setup {
 -- You don't need to set any of these options.
 -- IMPORTANT!: this is only a showcase of how you can set default options!
 require("telescope").setup {
+  pickers = {
+    find_files = {
+      cwd = vim.fn.getcwd(),
+    },
+  },
   extensions = {
     file_browser = {
       theme = "ivy",
