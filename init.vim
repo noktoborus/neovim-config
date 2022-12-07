@@ -94,6 +94,8 @@ nnoremap <Leader>lf <cmd>Telescope find_files<CR>
 nnoremap <Leader>lh <cmd>Telescope oldfiles<CR>
 " it is Tabs
 nnoremap <Tab> <cmd>lua require("telescope.builtin").buffers{}<CR>
+" local Grep
+nnoremap <Leader>/ <cmd>Telescope live_grep grep_open_files=true<CR>
 
 " format (only selection)
 vnoremap <Leader>f <cmd>lua vim.lsp.buf.format()<CR>
