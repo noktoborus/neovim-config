@@ -100,10 +100,10 @@ nnoremap <Tab> <cmd>lua require("telescope.builtin").buffers{}<CR>
 " local Grep
 nnoremap <Leader>/ <cmd>Telescope live_grep grep_open_files=true<CR>
 
-" format (only selection)
-vnoremap <Leader>f <cmd>lua vim.lsp.buf.format()<CR>
-" format all
-nnoremap <Leader>fa <cmd>lua vim.lsp.buf.format()<CR>
+" format (only selection) (Alt + f)
+vnoremap <M-f> <cmd>lua vim.lsp.buf.format()<CR>
+" format all (Alt-Shift + f)
+nnoremap <M-S-f> <cmd>lua vim.lsp.buf.format()<CR>
 
 " Git Deleted
 nnoremap <Leader>gd <cmd>Gitsigns toggle_deleted<CR>
