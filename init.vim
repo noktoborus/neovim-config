@@ -89,16 +89,16 @@ let mapleader = " "
 
 " List ???
 nnoremap <Leader>ll <cmd>Telescope file_browser<CR>
-" List Grep
-nnoremap <Leader>lg <cmd>Telescope live_grep<CR>
-" List Files
-nnoremap <Leader>lf <cmd>Telescope find_files<CR>
+" Grep other files (Ctrl + g)
+noremap <C-g> <cmd>Telescope live_grep<CR>
+" Open new file (Ctrl + o)
+noremap <C-o> <cmd>Telescope find_files<CR>
 " List History
 nnoremap <Leader>lh <cmd>Telescope oldfiles<CR>
 " it is Tabs
 nnoremap <Tab> <cmd>lua require("telescope.builtin").buffers{}<CR>
-" local Grep
-nnoremap <Leader>/ <cmd>Telescope live_grep grep_open_files=true<CR>
+" grep over open files (Ctrl + f)
+noremap <C-f> <cmd>Telescope live_grep grep_open_files=true<CR>
 
 " format (only selection) (Alt + f)
 vnoremap <M-f> <cmd>lua vim.lsp.buf.format()<CR>
