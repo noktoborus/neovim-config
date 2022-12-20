@@ -127,6 +127,11 @@ nnoremap <Leader>b <cmd>Lspsaga lsp_finder<CR>
 " aCtion
 noremap <Leader>c <cmd>Lspsaga code_action<CR>
 
+" jumps ability: jump to older position
+noremap <A-Left> <C-O>
+" jumps ability: jump to newest position
+noremap <A-Right> <C-I>
+
 " Terminal
 noremap <C-t> <cmd>terminal<CR>
 
