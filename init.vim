@@ -19,6 +19,9 @@ Plug 'neovim/nvim-lspconfig'
 " LSP Features
 Plug 'glepnir/lspsaga.nvim'
 
+" Cursor world highligh
+Plug 'RRethy/vim-illuminate'
+
 " automatically cwd to lsp's project root
 Plug 'ahmedkhalf/lsp-rooter.nvim'
 
