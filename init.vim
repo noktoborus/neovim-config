@@ -141,3 +141,8 @@ augroup custom_term
 	autocmd TermOpen * setlocal nonumber norelativenumber nolist bufhidden=hide
   autocmd TermOpen * startinsert
 augroup END
+
+if has('nvim') && executable('nvr')
+  let $GIT_EDITOR = 'nvr -cc split --remote-wait-silent'
+  let $EDITOR = 'nvr --remote-tab-wait-silent'
+endif
