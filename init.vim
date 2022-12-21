@@ -134,6 +134,7 @@ noremap <A-Right> <C-I>
 
 " Terminal
 noremap <C-t> <cmd>terminal<CR>
+tnoremap <Esc> <C-\><C-n>
 
 augroup custom_term
 	autocmd!
