@@ -87,14 +87,12 @@ set list
 
 let mapleader = " "
 
-" List ???
-nnoremap <Leader>ll <cmd>Telescope file_browser<CR>
 " Grep other files (Ctrl + g)
 noremap <C-g> <cmd>Telescope live_grep<CR>
 " Open new file (Ctrl + o)
-noremap <C-o> <cmd>Telescope find_files<CR>
-" List History
-nnoremap <Leader>lh <cmd>Telescope oldfiles<CR>
+noremap <C-o> <cmd>Telescope file_browser<CR>
+" find file to open (Alt + o)
+noremap <M-o> <cmd>Telescope find_files<CR>
 " it is Tabs
 nnoremap <Tab> <cmd>lua require("telescope.builtin").buffers{}<CR>
 " grep over open files (Ctrl + f)
