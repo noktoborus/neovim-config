@@ -157,7 +157,7 @@ require("telescope").setup {
       respect_gitignore = false,
       hidden = true,
       path = "%:p:h",
-      dir_icon = "📁",
+--      dir_icon = "📁",
     },
   },
 }
@@ -171,12 +171,12 @@ require('winbar').setup({
   show_file_path = true,
   show_symbols = true,
 
-  icons = {
-      file_icon_default = 'F',
-      seperator = '>',
-      editor_state = '●',
-      lock_icon = 'L',
-  },
+--  icons = {
+--      file_icon_default = 'F',
+--      seperator = '>',
+--      editor_state = '●',
+--      lock_icon = 'L',
+--  },
 })
 
 require('lspsaga').init_lsp_saga({
@@ -212,7 +212,7 @@ require('lspsaga').init_lsp_saga({
   symbol_in_winbar = {
     in_custom = false,
     enable = true,
-    separator = ' > ',
+--    separator = ' > ',
     show_file = true,
     -- define how to customize filename, eg: %:., %
     -- if not set, use default value `%:t`
