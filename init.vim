@@ -117,7 +117,7 @@ noremap <M-h> <cmd>Lspsaga hover_doc<CR>
 " Jump
 noremap <C-j> <cmd>Lspsaga diagnostic_jump_next<CR>
 " Objects
-nnoremap <M-o> <cmd>Lspsaga outline<CR>
+nnoremap <M-q> <cmd>Lspsaga outline<CR>
 " Rename
 nnoremap <M-r> <cmd>Lspsaga rename<CR>
 " ??? Befinition? reBerences?
