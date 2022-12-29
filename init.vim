@@ -113,17 +113,17 @@ nnoremap <Leader>gp <cmd>Gitsigns prev_hunk<CR>
 nnoremap <Leader>gs <cmd>Gitsigns preview_hunk<CR>
 
 " Help
-noremap <M-h> <cmd>Lspsaga hover_doc<CR>
+nnoremap <Leader>h <cmd>Lspsaga hover_doc<CR>
 " Jump
-noremap <C-j> <cmd>Lspsaga diagnostic_jump_next<CR>
+nnoremap <Leader>j <cmd>Lspsaga diagnostic_jump_next<CR>
 " Objects
-nnoremap <M-q> <cmd>Lspsaga outline<CR>
+nnoremap <Leader>o <cmd>Lspsaga outline<CR>
 " Rename
-nnoremap <M-r> <cmd>Lspsaga rename<CR>
+nnoremap <Leader>r <cmd>Lspsaga rename<CR>
 " ??? Befinition? reBerences?
-nnoremap <M-b> <cmd>Lspsaga lsp_finder<CR>
+nnoremap <Leader>b <cmd>Lspsaga lsp_finder<CR>
 " aCtion
-noremap <M-c> <cmd>Lspsaga code_action<CR>
+nnoremap <Leader>c <cmd>Lspsaga code_action<CR>
 
 " jumps ability: jump to older position
 noremap <A-Left> <C-O>
