@@ -68,8 +68,8 @@ lua require('init')
 
 "nnoremap  <C-n> <cmd>tabnext<cr>
 "nnoremap  <C-p> <cmd>tabprevious<cr>
-nnoremap  <C-n> <cmd>bnext<CR>
-nnoremap  <C-p> <cmd>bprevious<CR>
+nnoremap  <A-Up> <cmd>bnext<CR>
+nnoremap  <A-down> <cmd>bprevious<CR>
 
 au ColorScheme * hi Normal ctermbg=none guibg=none
 colorscheme gruvbox
