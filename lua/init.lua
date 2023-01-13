@@ -1,7 +1,7 @@
 require('nvim-treesitter.configs').setup {
   -- one of "all", "maintained" (parsers with maintainers),
   -- or a list of languages
-  ensure_installed = { "c", "yaml", "rust", "vim", "json", "meson" },
+  ensure_installed = { "c", "yaml", "rust", "vim", "json", "meson", "markdown" },
 
   highlight = {
     enable = true,
@@ -179,7 +179,7 @@ require('winbar').setup({
 --  },
 })
 
-require('lspsaga').init_lsp_saga({
+require('lspsaga').setup({
   preview_lines_above = 2,
   max_preview_lines = 10,
   show_outline = {
