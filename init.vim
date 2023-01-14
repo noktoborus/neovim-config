@@ -131,7 +131,9 @@ noremap <A-Left> <C-O>
 noremap <A-Right> <C-I>
 
 " Terminal
-noremap <C-t> <cmd>terminal<CR>
+noremap <C-t>t <cmd>tabe term://$SHELL<CR>
+noremap <C-t>v <cmd>vsplit term://$SHELL<CR>
+noremap <C-t>s <cmd>split term://$SHELL<CR>
 tnoremap <Esc> <C-\><C-n>
 
 augroup custom_term
