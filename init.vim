@@ -84,6 +84,7 @@ set number
 set termguicolors
 set completeopt=menu,menuone,noselect
 set list
+set notagstack
 
 let mapleader = " "
 
@@ -131,6 +132,7 @@ noremap <A-Left> <C-O>
 noremap <A-Right> <C-I>
 
 " Terminal
+noremap <C-t> <cmd>echo "v for vertical-splitted terminal, s for horisontal, t for fullscreen"<CR>
 noremap <C-t>t <cmd>tabe term://$SHELL<CR>
 noremap <C-t>v <cmd>vsplit term://$SHELL<CR>
 noremap <C-t>s <cmd>split term://$SHELL<CR>
