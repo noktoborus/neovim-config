@@ -132,6 +132,31 @@ if vim.fn.executable('cargo') ~= 0 then
   require('lspconfig').rust_analyzer.setup({})
 end
 
+if vim.fn.executable('lua-language-server') ~= 0 then
+  require('lspconfig').sumneko_lua.setup({
+    settings = {
+      Lua = {
+        runtime = {
+          -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+          version = 'LuaJIT',
+        },
+        diagnostics = {
+          -- Get the language server to recognize the `vim` global
+          globals = {'vim'},
+        },
+        workspace = {
+          -- Make the server aware of Neovim runtime files
+          library = vim.api.nvim_get_runtime_file("", true),
+        },
+        -- Do not send telemetry data containing a randomized but unique identifier
+        telemetry = {
+          enable = false,
+        },
+      },
+    },
+  })
+end
+
 require('gitsigns').setup {
   numhl = true,
   current_line_blame = true, -- Toggle with `:Gitsigns toggle_current_line_blame`
@@ -184,7 +209,7 @@ require('winbar').setup({
 --  },
 })
 
-require('lspsaga').setup({
+require('lspsaga').init_lsp_saga({
   preview_lines_above = 2,
   max_preview_lines = 10,
   show_outline = {
