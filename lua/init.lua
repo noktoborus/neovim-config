@@ -123,6 +123,11 @@ if vim.fn.executable('yaml-language-server') ~= 0 then
   })
 end
 
+if vim.fn.executable('bash-language-server') ~= 0 then
+  -- ubuntu: snap install yaml-language-server
+  require('lspconfig')['bashls'].setup({})
+end
+
 if vim.fn.executable('cargo') ~= 0 then
   require('lspconfig').rust_analyzer.setup({})
 end
