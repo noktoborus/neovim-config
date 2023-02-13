@@ -123,6 +123,21 @@ if vim.fn.executable('yaml-language-server') ~= 0 then
   })
 end
 
+if vim.fn.executable('pylsp') ~= 0 then
+  require('lspconfig')['pylsp'].setup {
+      settings = {
+          pylsp = {
+              plugins = {
+                  pycodestyle = {
+                      ignore = { 'W391' },
+                      maxLineLength = 100
+                  }
+              }
+          }
+      }
+  }
+end
+
 if vim.fn.executable('bash-language-server') ~= 0 then
   -- ubuntu: snap install yaml-language-server
   require('lspconfig')['bashls'].setup({})
