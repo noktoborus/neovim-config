@@ -56,6 +56,9 @@ Plug 'morhetz/gruvbox'
 " code coliring
 Plug 'nvim-treesitter/nvim-treesitter'
 
+" markdown
+Plug 'mzlogin/vim-markdown-toc'
+
 " ???
 Plug 'farmergreg/vim-lastplace'
 Plug 'tpope/vim-sensible'
