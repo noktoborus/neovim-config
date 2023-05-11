@@ -148,7 +148,7 @@ if vim.fn.executable('cargo') ~= 0 then
 end
 
 if vim.fn.executable('lua-language-server') ~= 0 then
-  require('lspconfig').sumneko_lua.setup({
+  require('lspconfig').lua_ls.setup({
       settings = {
           Lua = {
               runtime = {
