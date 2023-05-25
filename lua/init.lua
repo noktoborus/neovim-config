@@ -1,7 +1,7 @@
 require('nvim-treesitter.configs').setup {
     -- one of "all", "maintained" (parsers with maintainers),
     -- or a list of languages
-    ensure_installed = { "c", "yaml", "rust", "vim", "json", "meson", "markdown", "markdown_inline" },
+    ensure_installed = { "c", "yaml", "rust", "vim", "json", "meson", "markdown", "markdown_inline", "cpp" },
 
     highlight = {
         enable = true,
