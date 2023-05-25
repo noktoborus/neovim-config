@@ -102,6 +102,7 @@ if vim.fn.executable('clangd') ~= 0 then
           "--function-arg-placeholders=0",
           "--pch-storage=memory",
           "--pretty",
+          "--header-insertion=never",
       }
   })
 end
