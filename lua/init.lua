@@ -117,7 +117,7 @@ if vim.fn.executable('yaml-language-server') ~= 0 then
               completion = { enable = true },
               hover = { enable = true },
               schemas = {
-                  ["schema.json"] = "/*",
+                  ["schema.json"] = "/*"
               },
           },
       }
@@ -235,15 +235,27 @@ require('lspsaga').setup({
     },
     finder = {
         keys = {
-            expand_or_jump = '<CR>',
+            toggle_or_open = { "o", "<CR>" },
+            quit = { "q", "<Esc>" },
+            shuttle = { "[w", "<TAB>" },
         },
     },
     outline = {
+        win_position = "left",
         keys = {
-            expand_or_jump = '<CR>',
-            quit = "<ESC>",
+            toggle_or_jump = { "o", "<SPACE>" },
+            jump = { "e", "<CR>" },
+            quit = { "q", "<ESC>" },
         },
     },
+    callhierarchy = {
+        keys = {
+          toggle_or_req = { "u", "<SPACE>" },
+          edit = { "e", "<CR>" },
+          quit = { "q", "<ESC>" },
+          shuttle = { "[w", "<TAB>" },
+        }
+    }
 })
 
 require("lsp-rooter").setup({})

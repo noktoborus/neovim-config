@@ -97,8 +97,8 @@ noremap <C-g> <cmd>Telescope live_grep<CR>
 noremap <C-o> <cmd>Telescope file_browser<CR>
 " find file to open (Alt + o)
 noremap <M-o> <cmd>Telescope find_files<CR>
-" it is Tabs
-nnoremap <Tab> <cmd>lua require("telescope.builtin").buffers{}<CR>
+"" it is Tabs
+"nnoremap <Tab> <cmd>lua require("telescope.builtin").buffers{}<CR>
 " grep over open files (Ctrl + f)
 noremap <C-f> <cmd>Telescope live_grep grep_open_files=true<CR>
 
@@ -125,9 +125,11 @@ nnoremap <Leader>o <cmd>Lspsaga outline<CR>
 " Rename
 nnoremap <Leader>r <cmd>Lspsaga rename<CR>
 " ??? Befinition? reBerences?
-nnoremap <Leader>b <cmd>Lspsaga lsp_finder<CR>
+nnoremap <Leader>b <cmd>Lspsaga finder def+ref<CR>
 " aCtion
 nnoremap <Leader>c <cmd>Lspsaga code_action<CR>
+" Incoming calls
+nnoremap <Leader>i <cmd>Lspsaga incoming_calls<CR>
 
 " jumps ability: jump to older position
 noremap <A-Left> <C-O>
