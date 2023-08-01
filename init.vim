@@ -98,7 +98,7 @@ noremap <C-o> <cmd>Telescope file_browser<CR>
 " find file to open (Alt + o)
 noremap <M-o> <cmd>Telescope find_files<CR>
 "" it is Tabs
-"nnoremap <Tab> <cmd>lua require("telescope.builtin").buffers{}<CR>
+nnoremap <Tab> <cmd>lua require("telescope.builtin").buffers{}<CR>
 " grep over open files (Ctrl + f)
 noremap <C-f> <cmd>Telescope live_grep grep_open_files=true<CR>
 
