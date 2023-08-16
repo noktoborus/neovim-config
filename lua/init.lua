@@ -262,4 +262,13 @@ require("lsp-rooter").setup({})
 
 require('illuminate').configure()
 
-require('lualine').setup()
+require('lualine').setup({
+  sections = {
+    lualine_c = {
+      "require'lsp-status'.status()",
+      {
+        "filename", path = 1
+      }
+    },
+  }
+})
