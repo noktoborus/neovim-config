@@ -59,6 +59,10 @@ Plug 'nvim-treesitter/nvim-treesitter'
 " markdown
 Plug 'mzlogin/vim-markdown-toc'
 
+" statusline
+Plug 'nvim-lualine/lualine.nvim'
+Plug 'nvim-tree/nvim-web-devicons'
+
 " ???
 Plug 'farmergreg/vim-lastplace'
 Plug 'tpope/vim-sensible'

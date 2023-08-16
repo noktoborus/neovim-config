@@ -261,3 +261,5 @@ require('lspsaga').setup({
 require("lsp-rooter").setup({})
 
 require('illuminate').configure()
+
+require('lualine').setup()
