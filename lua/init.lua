@@ -317,12 +317,52 @@ require("lsp-rooter").setup({})
 require('illuminate').configure()
 
 require('lualine').setup({
-  sections = {
+  options = {
+    theme = 'everforest',
+  },
+  tabline = {
+    lualine_a = {},
+    lualine_b = {
+      'branch',
+      separator = nil
+    },
     lualine_c = {
-      "require'lsp-status'.status()",
       {
-        "filename", path = 1
+        'buffers',
+        -- use_mode_colors = true,
+        buffers_color = {
+          active = 'lualine_c_insert',
+          inactive = 'lualine_c_inactive',
+        },
+        symbols = {
+          modified = ' ●',
+          alternate_file = '',
+          directory = '',
+        },
       }
     },
-  }
+    lualine_x = { 'encoding', 'fileformat' },
+    lualine_y = { 'diff', 'diagnostics' },
+    lualine_z = { 'progress' }
+  },
+  sections = {
+    lualine_a = { 'mode' },
+    lualine_b = {},
+    lualine_c = {
+      { 'filename', path = 1 }
+    },
+    lualine_x = { 'filetype', 'location' },
+    lualine_y = {},
+    lualine_z = {},
+  },
+  inactive_sections = {
+    lualine_a = {},
+    lualine_b = {},
+    lualine_c = {
+      { 'filename', path = 1 }
+    },
+    lualine_x = { 'filetype', 'location' },
+    lualine_y = {},
+    lualine_z = {}
+  },
 })
