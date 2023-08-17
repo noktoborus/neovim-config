@@ -75,8 +75,8 @@ lua require('init')
 
 "nnoremap  <C-n> <cmd>tabnext<cr>
 "nnoremap  <C-p> <cmd>tabprevious<cr>
-nnoremap  <A-Up> <cmd>bnext<CR>
-nnoremap  <A-down> <cmd>bprevious<CR>
+nnoremap  <A-Left> <cmd>bnext<CR>
+nnoremap  <A-Right> <cmd>bprevious<CR>
 
 au ColorScheme * hi Normal ctermbg=none guibg=none
 colorscheme gruvbox
@@ -136,9 +136,9 @@ nnoremap <Leader>c <cmd>Lspsaga code_action<CR>
 nnoremap <Leader>i <cmd>Lspsaga incoming_calls<CR>
 
 " jumps ability: jump to older position
-noremap <A-Left> <C-O>
+noremap <A-Up> <C-O>
 " jumps ability: jump to newest position
-noremap <A-Right> <C-I>
+noremap <A-Down> <C-I>
 
 " Terminal
 noremap <C-t> <cmd>echo "v for vertical-splitted terminal, s for horisontal, t for fullscreen"<CR>
