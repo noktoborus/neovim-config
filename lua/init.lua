@@ -288,6 +288,7 @@ require('lspsaga').setup({
         quit = "<Esc>",
     },
     finder = {
+        layout = 'normal',
         keys = {
             toggle_or_open = { "o", "<CR>" },
             quit = { "q", "<Esc>" },
@@ -295,6 +296,7 @@ require('lspsaga').setup({
         },
     },
     outline = {
+        layout = 'float',
         win_position = "left",
         keys = {
             toggle_or_jump = { "o", "<SPACE>" },
@@ -303,6 +305,7 @@ require('lspsaga').setup({
         },
     },
     callhierarchy = {
+        layout = 'normal',
         keys = {
           toggle_or_req = { "u", "<SPACE>" },
           edit = { "e", "<CR>" },
