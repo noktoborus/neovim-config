@@ -362,7 +362,7 @@ require('lualine').setup({
     },
     lualine_x = { 'encoding', 'fileformat' },
     lualine_y = { 'diff', 'diagnostics' },
-    lualine_z = { {require('auto-session.lib').current_session_name}, 'progress' }
+    lualine_z = { 'progress' }
   },
   sections = {
     lualine_a = { 'mode' },
@@ -388,13 +388,21 @@ require('lualine').setup({
 
 require("trouble").setup()
 
-require("auto-session").setup({
-  log_level = "error",
-  auto_session_enable_last_session = vim.loop.cwd() == vim.loop.os_homedir(),
-  cwd_change_handling = nil,
-  --auto_save_enabled = true,
-  --auto_restore_enabled = true,
-  session_lens = {
-    buftypes_to_ignore = {},
+local Path = require('plenary.path')
+local config = require('session_manager.config')
+require('session_manager').setup({
+  sessions_dir = Path:new(vim.fn.stdpath('data'), 'sessions'),
+  session_filename_to_dir = session_filename_to_dir,
+  dir_to_session_filename = dir_to_session_filename,
+  autoload_mode = config.AutoloadMode.CurrentDir,
+  autosave_last_session = true,
+  autosave_ignore_not_normal = true,
+  autosave_ignore_dirs = {},
+  autosave_ignore_filetypes = {
+    'gitcommit',
+    'gitrebase',
   },
+  autosave_ignore_buftypes = {},
+  autosave_only_in_session = false,
+  max_path_length = 80,
 })

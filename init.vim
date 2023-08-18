@@ -64,8 +64,10 @@ Plug 'mzlogin/vim-markdown-toc'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'nvim-tree/nvim-web-devicons'
 
+" sessions
+Plug 'Shatur/neovim-session-manager'
+
 " ???
-Plug 'rmagatti/auto-session'
 Plug 'farmergreg/vim-lastplace'
 Plug 'tpope/vim-sensible'
 Plug 'junegunn/seoul256.vim'
@@ -160,7 +162,7 @@ noremap <C-t>s <cmd>split term://$SHELL<CR>
 tnoremap <Esc> <C-\><C-n>
 
 " Sessions/Projects
-noremap <C-p> <cmd>Autosession search<CR>
+noremap <C-p> <cmd>SessionManager load_session<CR>
 
 augroup custom_term
 	autocmd!
