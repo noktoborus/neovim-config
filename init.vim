@@ -121,6 +121,15 @@ nnoremap <Leader>gn <cmd>Gitsigns next_hunk<CR>
 nnoremap <Leader>gp <cmd>Gitsigns prev_hunk<CR>
 " Git Show hunk
 nnoremap <Leader>gs <cmd>Gitsigns preview_hunk<CR>
+" Git blame
+nnoremap <Leader>gb <cmd>Gitsigns blame_line<CR>
+" Git reset hunk
+nnoremap <Leader>gr <cmd>Gitsigns reset_hunk<CR>
+" Git stage hunk
+nnoremap <Leader>gS <cmd>Gitsigns stage_hunk<CR>
+" Git unstage last staged hunk
+nnoremap <Leader>gU <cmd>Gitsigns undo_stage_hunk<CR>
+
 
 " Help
 nnoremap <Leader>h <cmd>Lspsaga hover_doc<CR>
