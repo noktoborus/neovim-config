@@ -12,6 +12,7 @@ inoremap <C-v> <Esc>"+p<CR>i
 
 " Plugin manager: https://github.com/junegunn/vim-plug
 call plug#begin('~/.config/nvim/plugged')
+Plug 'nvim-tree/nvim-tree.lua'
 
 " LSP support
 Plug 'neovim/nvim-lspconfig'
@@ -98,7 +99,7 @@ let mapleader = " "
 " Grep other files (Ctrl + g)
 noremap <C-g> <cmd>Telescope live_grep<CR>
 " Open new file (Ctrl + o)
-noremap <C-o> <cmd>Telescope file_browser<CR>
+noremap <C-o> <cmd>NvimTreeFindFileToggle<CR>
 " find file to open (Alt + o)
 noremap <M-o> <cmd>Telescope find_files<CR>
 "" it is Tabs

@@ -76,6 +76,24 @@ require 'nvim-treesitter.configs'.setup {
     },
 }
 
+-- Set up nvim-tree
+require('nvim-tree').setup({
+  disable_netrw = true,
+  sync_root_with_cwd = true,
+  respect_buf_cwd = true,
+  update_focused_file = {
+    enable = true,
+    update_root = true,
+  },
+  view = {
+    side = "left",
+    width = {
+      min = 35,
+      max = 40,
+    },
+  },
+})
+
 -- Set up nvim-cmp.
 local cmp = require 'cmp'
 
