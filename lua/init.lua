@@ -80,6 +80,9 @@ require 'nvim-treesitter.configs'.setup {
 local cmp = require 'cmp'
 
 cmp.setup({
+    completion = {
+      autocomplete = false,
+    },
     snippet = {
         -- REQUIRED - you must specify a snippet engine
         expand = function(args)
@@ -144,6 +147,7 @@ cmp.setup.cmdline(':', {
 
 -- Set up lspconfig.
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = false
 
 if vim.fn.executable('clangd') ~= 0 then
   -- ubuntu/termux: apt install clangd
