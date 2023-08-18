@@ -16,6 +16,7 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'neovim/nvim-lspconfig'
 
 " LSP Features
+Plug 'folke/trouble.nvim'
 Plug 'glepnir/lspsaga.nvim'
 
 " Cursor world highligh
@@ -123,6 +124,8 @@ nnoremap <Leader>gs <cmd>Gitsigns preview_hunk<CR>
 nnoremap <Leader>h <cmd>Lspsaga hover_doc<CR>
 " Jump
 nnoremap <Leader>j <cmd>Lspsaga diagnostic_jump_next<CR>
+" Trouble
+nnoremap <Leader>t <cmd>TroubleToggle workspace_diagnostics<CR>
 " Objects
 nnoremap <Leader>o <cmd>Lspsaga outline<CR>
 " Rename

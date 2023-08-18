@@ -378,3 +378,5 @@ require('lualine').setup({
     lualine_z = {}
   },
 })
+
+require("trouble").setup()
