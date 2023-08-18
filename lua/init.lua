@@ -319,12 +319,13 @@ require('illuminate').configure()
 require('lualine').setup({
   options = {
     theme = 'everforest',
+    section_separators = { left = '', right = '' },
+    component_separators = { left = '', right = '' }
   },
   tabline = {
     lualine_a = {},
     lualine_b = {
       'branch',
-      separator = nil
     },
     lualine_c = {
       {
