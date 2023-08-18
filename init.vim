@@ -43,6 +43,7 @@ Plug 'lewis6991/gitsigns.nvim'
 
 " Search engine
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-ui-select.nvim'
 
 " File manager
 Plug 'nvim-tree/nvim-tree.lua'
