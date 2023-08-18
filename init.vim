@@ -12,8 +12,6 @@ inoremap <C-v> <Esc>"+p<CR>i
 
 " Plugin manager: https://github.com/junegunn/vim-plug
 call plug#begin('~/.config/nvim/plugged')
-Plug 'nvim-tree/nvim-tree.lua'
-
 " LSP support
 Plug 'neovim/nvim-lspconfig'
 
@@ -46,7 +44,7 @@ Plug 'lewis6991/gitsigns.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 
 " File manager
-Plug 'nvim-telescope/telescope-file-browser.nvim'
+Plug 'nvim-tree/nvim-tree.lua'
 
 " Plugin's frameworks
 Plug 'nvim-lua/plenary.nvim'

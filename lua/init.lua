@@ -270,22 +270,8 @@ require("telescope").setup {
         },
     },
     extensions = {
-        file_browser = {
-            theme = "ivy",
-            -- disables netrw and use telescope-file-browser in its place
-            hijack_netrw = true,
-            cwd_to_path = false,
-            grouped = true,
-            respect_gitignore = false,
-            hidden = true,
-            path = "%:p:h",
-            --      dir_icon = "📁",
-        },
     },
 }
--- To get telescope-file-browser loaded and working with telescope,
--- you need to call load_extension, somewhere after setup function:
-require("telescope").load_extension("file_browser")
 
 require('winbar').setup({
     enabled = true,
