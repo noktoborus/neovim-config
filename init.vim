@@ -130,7 +130,6 @@ nnoremap <Leader>gS <cmd>Gitsigns stage_hunk<CR>
 " Git unstage last staged hunk
 nnoremap <Leader>gU <cmd>Gitsigns undo_stage_hunk<CR>
 
-
 " Help
 nnoremap <Leader>h <cmd>Lspsaga hover_doc<CR>
 " Jump
@@ -159,6 +158,9 @@ noremap <C-t>t <cmd>tabe term://$SHELL<CR>
 noremap <C-t>v <cmd>vsplit term://$SHELL<CR>
 noremap <C-t>s <cmd>split term://$SHELL<CR>
 tnoremap <Esc> <C-\><C-n>
+
+" Sessions/Projects
+noremap <C-p> <cmd>Autosession search<CR>
 
 augroup custom_term
 	autocmd!
