@@ -355,7 +355,7 @@ require('lualine').setup({
     },
     lualine_x = { 'encoding', 'fileformat' },
     lualine_y = { 'diff', 'diagnostics' },
-    lualine_z = { 'progress' }
+    lualine_z = { {require('auto-session.lib').current_session_name}, 'progress' }
   },
   sections = {
     lualine_a = { 'mode' },
@@ -380,3 +380,14 @@ require('lualine').setup({
 })
 
 require("trouble").setup()
+
+require("auto-session").setup({
+  log_level = "error",
+  auto_session_enable_last_session = vim.loop.cwd() == vim.loop.os_homedir(),
+  cwd_change_handling = nil,
+  --auto_save_enabled = true,
+  --auto_restore_enabled = true,
+  session_lens = {
+    buftypes_to_ignore = {},
+  },
+})

@@ -64,6 +64,7 @@ Plug 'nvim-lualine/lualine.nvim'
 Plug 'nvim-tree/nvim-web-devicons'
 
 " ???
+Plug 'rmagatti/auto-session'
 Plug 'farmergreg/vim-lastplace'
 Plug 'tpope/vim-sensible'
 Plug 'junegunn/seoul256.vim'
