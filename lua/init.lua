@@ -388,12 +388,22 @@ session_manager.save_current_session = session_manager_save_current_session_fixe
 -- Lualine configuration
 local function lualine_getcwdname()
   local cwd = vim.fn.getcwd()
+  local homedir = vim.fn.expand('~')
+  local prefix = ''
 
-  if cwd == vim.fn.expand('~') then
-    return '~'
+  if cwd ~= fixed_cwd then
+    prefix = vim.fn.fnamemodify(fixed_cwd, ":t")..':'
   end
 
-  return vim.fn.fnamemodify(cwd, ":t")
+  if fixed_cwd == homedir then
+    prefix = '~:'
+  end
+
+  if cwd == homedir then
+    return prefix..'~'
+  end
+
+  return prefix..vim.fn.fnamemodify(cwd, ":t")
 end
 
 require('lualine').setup({
