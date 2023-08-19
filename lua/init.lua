@@ -361,6 +361,9 @@ local fixed_cwd = vim.fn.getcwd()
 
 -- save session to startup's directory, not to last cwd
 local function session_manager_save_current_session_fixed()
+  if vim.fn.argc() > 0 then
+    return
+  end
   if fixed_cwd then
     require('session_manager.utils').save_session(config.dir_to_session_filename(fixed_cwd).filename)
   end
