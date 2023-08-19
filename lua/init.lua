@@ -386,7 +386,14 @@ require('lualine').setup({
   },
 })
 
-require("trouble").setup()
+require("trouble").setup({
+  action_keys = {
+    close = { "<Esc>", "q" },
+    jump = { "<tab>", "<2-leftmouse>" },
+    jump_close = { "o", "<cr>" },
+    toggle_fold = { "zA", "za", "<space>" },
+  },
+})
 
 local Path = require('plenary.path')
 local config = require('session_manager.config')
