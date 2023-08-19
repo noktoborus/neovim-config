@@ -353,6 +353,16 @@ require("lsp-rooter").setup({})
 
 require('illuminate').configure()
 
+local function lualine_getcwdname()
+  local cwd = vim.fn.getcwd()
+
+  if cwd == vim.fn.expand('~') then
+    return '~'
+  end
+
+  return vim.fn.fnamemodify(cwd, ":t")
+end
+
 require('lualine').setup({
   options = {
     theme = 'everforest',
@@ -381,7 +391,7 @@ require('lualine').setup({
     },
     lualine_x = { 'encoding', 'fileformat' },
     lualine_y = { 'diff', 'diagnostics' },
-    lualine_z = { 'progress' }
+    lualine_z = { lualine_getcwdname, 'progress' }
   },
   sections = {
     lualine_a = { 'mode' },
