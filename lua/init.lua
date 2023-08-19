@@ -426,7 +426,17 @@ require("trouble").setup({
 
 local Path = require('plenary.path')
 local config = require('session_manager.config')
-require('session_manager').setup({
+local session_manager = require('session_manager')
+local fixed_cwd = vim.fn.getcwd()
+
+-- save session to startup's directory, not to last cwd
+local function session_manager_save_current_session_fixed()
+  if fixed_cwd then
+    require('session_manager.utils').save_session(config.dir_to_session_filename(fixed_cwd).filename)
+  end
+end
+
+session_manager.setup({
   sessions_dir = Path:new(vim.fn.stdpath('data'), 'sessions'),
   session_filename_to_dir = session_filename_to_dir,
   dir_to_session_filename = dir_to_session_filename,
@@ -442,3 +452,5 @@ require('session_manager').setup({
   autosave_only_in_session = false,
   max_path_length = 80,
 })
+
+session_manager.save_current_session = session_manager_save_current_session_fixed
