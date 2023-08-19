@@ -391,7 +391,7 @@ require('lualine').setup({
     },
     lualine_x = { 'encoding', 'fileformat' },
     lualine_y = { 'diff', 'diagnostics' },
-    lualine_z = { lualine_getcwdname, 'progress' }
+    lualine_z = { lualine_getcwdname }
   },
   sections = {
     lualine_a = { 'mode' },
@@ -399,8 +399,8 @@ require('lualine').setup({
     lualine_c = {
       { 'filename', path = 1 }
     },
-    lualine_x = { 'filetype', 'location' },
-    lualine_y = {},
+    lualine_x = { 'filetype' },
+    lualine_y = { 'location', 'progress' },
     lualine_z = {},
   },
   inactive_sections = {
