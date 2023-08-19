@@ -77,7 +77,26 @@ require 'nvim-treesitter.configs'.setup {
 }
 
 -- Set up nvim-tree
+local function nvim_tree_on_attach(bufnr)
+  local api = require('nvim-tree.api')
+
+  local function opts(desc)
+    return { desc = 'nvim-tree: ' .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+  end
+
+  api.marks.clear()
+
+  api.config.mappings.default_on_attach(bufnr)
+
+  vim.keymap.set('n', '<space>',     api.marks.toggle,                opts('Toggle Bookmark'))
+  vim.keymap.set('n', '<esc>',       api.tree.close,                  opts('Close'))
+
+  vim.keymap.set('n', 'd',    api.marks.bulk.delete,                 opts('Delete Bookmarked'))
+  vim.keymap.set('n', 'm',    api.marks.bulk.move,                   opts('Move Bookmarked'))
+end
+
 require('nvim-tree').setup({
+  on_attach = nvim_tree_on_attach,
   disable_netrw = true,
   sync_root_with_cwd = true,
   respect_buf_cwd = true,
