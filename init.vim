@@ -106,9 +106,10 @@ noremap <C-o> <cmd>NvimTreeFindFileToggle<CR>
 " find file to open (Alt + o)
 noremap <M-o> <cmd>Telescope find_files<CR>
 "" it is Tabs
-nnoremap <Tab> <cmd>lua require("telescope.builtin").buffers{}<CR>
+nnoremap <Tab> <cmd>lua require("telescope.builtin").buffers{ ignore_current_buffer = true, sort_lastused = true, previewer = false }<CR>
 " grep over open files (Ctrl + f)
-noremap <C-f> <cmd>Telescope live_grep grep_open_files=true<CR>
+noremap <C-f> <cmd>lua require('telescope.builtin').live_grep{ prompt_title = 'Grep over openned buffers', grep_open_files = true }<CR>
+
 
 " format (only selection) (Space + f)
 vnoremap <Leader>f <cmd>lua vim.lsp.buf.format()<CR>
