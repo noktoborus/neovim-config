@@ -487,3 +487,68 @@ require("trouble").setup({
   },
 })
 
+local function exists(filename)
+  local stat = vim.loop.fs_stat(filename)
+  return stat and stat.type or false
+end
+
+local function find_git_rootdir(fullfilename)
+  local path = vim.fn.fnamemodify(fullfilename, ":h")
+
+  if fullfilename == path then
+    return nil
+  end
+
+  if exists(Path:new(path, ".git").filename) == 'directory' then
+    return path
+  end
+
+  return find_git_rootdir(path)
+end
+
+function _G.save_buffers_and_git_push_force()
+  local current_file_name = vim.fn.expand("%:p")
+  local tempfilename = vim.fn.tempname()
+  local gitroot = find_git_rootdir(current_file_name)
+  local file = io.open(tempfilename, "w")
+
+  if file == nil then
+    print("Can not open temporary file")
+  else
+    if gitroot == nil then
+      print("File " .. current_file_name .." has no git tree")
+      return
+    end
+
+    file:write("echo rootdir is '" .. gitroot .. "'\n")
+    file:write("echo List files what pending to save:\n")
+    file:write("echo " .. current_file_name .. "\n")
+    file:write("cd '" .. gitroot .. "'\n")
+    file:write("BRANCH=`git rev-parse --abbrev-ref HEAD`\n")
+    file:write("[ $? -eq 0 ] || exit 1\n")
+    file:write("[ ${BRANCH} == 'master' -o ${BRANCH} == 'main' ] && echo -e '\\e[0;31m Push to master and main branch not allowed\\e[0m' && exit 1\n")
+
+    for _, bufid in ipairs(vim.api.nvim_list_bufs()) do
+      local buffilename = vim.api.nvim_buf_get_name(bufid)
+
+      if buffilename:sub(1, #gitroot) ~= gitroot then
+        file:write("echo -e '\\e[0;37m" .. buffilename .. "\\e[0m: skip'\n")
+      else
+        if vim.api.nvim_get_option_value('modified', { buf = bufid }) then
+          file:write("echo -e '\\e[0;33m" .. buffilename .. "\\e[0m: save modified buffer'\n")
+          vim.api.save_buffer(bufid)
+        end
+
+        file:write("echo -e '\\e[0;32m" .. buffilename .. "\\e[0m: perform git add'\n")
+        file:write("git add '" .. buffilename:sub(#gitroot + 2) .. "'\n")
+      end
+    end
+
+    file:write("git status\n")
+    file:write("git commit -a -m 'temporary commit'\n")
+    file:write("git push origin HEAD -f")
+    file:close()
+
+    vim.cmd("terminal bash '" .. tempfilename .. "'")
+  end
+end

@@ -131,6 +131,8 @@ nnoremap <Leader>gr <cmd>Gitsigns reset_hunk<CR>
 nnoremap <Leader>gS <cmd>Gitsigns stage_hunk<CR>
 " Git unstage last staged hunk
 nnoremap <Leader>gU <cmd>Gitsigns undo_stage_hunk<CR>
+" Git temporary force push
+nnoremap <Leader>gPP <cmd>:lua save_buffers_and_git_push_force()<CR>
 
 " Help
 nnoremap <Leader>h <cmd>Lspsaga hover_doc<CR>
