@@ -163,9 +163,6 @@ noremap <C-t>v <cmd>vsplit term://$SHELL<CR>
 noremap <C-t>s <cmd>split term://$SHELL<CR>
 tnoremap <Esc> <C-\><C-n>
 
-" Sessions/Projects
-noremap <C-p> <cmd>SessionManager load_session<CR>
-
 augroup custom_term
 	autocmd!
 	autocmd TermOpen * setlocal nonumber norelativenumber nolist bufhidden=hide
