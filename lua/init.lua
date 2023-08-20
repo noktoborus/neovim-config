@@ -282,7 +282,26 @@ require('gitsigns').setup {
 
 -- You don't need to set any of these options.
 -- IMPORTANT!: this is only a showcase of how you can set default options!
+local actions = require("telescope.actions")
+
 require("telescope").setup {
+    defaults = {
+      -- Default configuration for telescope goes here:
+      -- config_key = value,
+      mappings = {
+        i = {
+          ["<Tab>"] = actions.cycle_history_prev,
+          ["<S-Tab>"] = actions.cycle_history_next,
+          ["<Up>"] = actions.move_selection_previous,
+          ["<Down>"] = actions.move_selection_next,
+          ["<C-Space>"] = actions.toggle_selection,
+        },
+        n = {
+          ["<CR>"] = actions.add_selection + actions.send_selected_to_qflist + actions.open_qflist,
+          ["<Space>"] = actions.toggle_selection,
+        },
+      }
+    },
     pickers = {
         find_files = {
             cwd = vim.fn.getcwd(),
