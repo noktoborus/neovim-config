@@ -435,10 +435,8 @@ require('lualine').setup({
     component_separators = { left = '', right = '' }
   },
   tabline = {
-    lualine_a = {},
-    lualine_b = {
-      'branch',
-    },
+    lualine_a = { 'tabs' },
+    lualine_b = { },
     lualine_c = {
       {
         'buffers',
@@ -455,8 +453,8 @@ require('lualine').setup({
       }
     },
     lualine_x = { 'encoding', 'fileformat' },
-    lualine_y = { 'diff', 'diagnostics' },
-    lualine_z = { lualine_getcwdname }
+    lualine_y = { 'diff', 'diagnostics', lualine_getcwdname },
+    lualine_z = { 'branch' }
   },
   sections = {
     lualine_a = { 'mode' },
