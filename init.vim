@@ -146,7 +146,8 @@ nnoremap <Leader>o <cmd>Lspsaga outline<CR>
 " Rename
 nnoremap <Leader>r <cmd>Lspsaga rename<CR>
 " ??? Befinition? reBerences?
-nnoremap <Leader>b <cmd>Lspsaga finder def+ref<CR>
+"nnoremap <Leader>b <cmd>Lspsaga finder def+ref<CR>
+nnoremap <Leader>b <cmd>TroubleToggle lsp_references<CR>
 " aCtion
 nnoremap <Leader>c <cmd>Lspsaga code_action<CR>
 " Incoming calls
