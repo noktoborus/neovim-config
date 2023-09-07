@@ -365,7 +365,10 @@ require('lspsaga').setup({
           quit = { "q", "<ESC>" },
           shuttle = { "[w", "<TAB>" },
         }
-    }
+    },
+    lightbulb = {
+      enable = false,
+    },
 })
 
 require("lsp-rooter").setup({})
