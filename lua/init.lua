@@ -546,3 +546,6 @@ function _G.save_buffers_and_git_push_force()
 end
 
  require("auto-save").setup { }
+
+local neogit = require('neogit')
+neogit.setup {}

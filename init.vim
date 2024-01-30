@@ -40,6 +40,8 @@ Plug 'hrsh7th/vim-vsnip'
 
 " Git tools
 Plug 'lewis6991/gitsigns.nvim'
+Plug 'NeogitOrg/neogit'
+Plug 'sindrets/diffview.nvim' "       -- optional - Diff integration for neogit
 
 " autosave
 Plug 'okuuva/auto-save.nvim'
