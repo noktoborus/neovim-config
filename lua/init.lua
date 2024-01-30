@@ -544,3 +544,5 @@ function _G.save_buffers_and_git_push_force()
     vim.cmd("terminal bash '" .. tempfilename .. "'")
   end
 end
+
+ require("auto-save").setup { }

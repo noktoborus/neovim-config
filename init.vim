@@ -41,6 +41,9 @@ Plug 'hrsh7th/vim-vsnip'
 " Git tools
 Plug 'lewis6991/gitsigns.nvim'
 
+" autosave
+Plug 'okuuva/auto-save.nvim'
+
 " Search engine
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-ui-select.nvim'
@@ -174,4 +177,6 @@ augroup END
 if has('nvim') && executable('nvr')
   let $GIT_EDITOR = 'nvr -cc split --remote-wait-silent'
   let $EDITOR = 'nvr --remote-tab-wait-silent'
-endif
+  endif
+
+set noswapfile
