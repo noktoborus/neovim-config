@@ -549,3 +549,6 @@ end
 
 local neogit = require('neogit')
 neogit.setup {}
+
+opts = {}
+require("ibl").setup(require("indent-rainbowline").make_opts(opts))

@@ -12,6 +12,10 @@ inoremap <C-v> <Esc>"+p<CR>i
 
 " Plugin manager: https://github.com/junegunn/vim-plug
 call plug#begin('~/.config/nvim/plugged')
+" Coloring
+Plug 'TheGLander/indent-rainbowline.nvim'
+Plug 'lukas-reineke/indent-blankline.nvim'
+
 " LSP support
 Plug 'neovim/nvim-lspconfig'
 
